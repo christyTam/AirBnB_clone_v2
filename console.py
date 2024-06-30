@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines the HBNB console."""
+import uuid
 import cmd
 from shlex import split
 from models import storage
