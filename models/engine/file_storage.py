@@ -1,7 +1,6 @@
-#!/usr/bin/python3
-""" module defines a class to manage file storage for hbnb clone"""
+s module defines a class to manage file storage for hbnb clone"""
 import json
-import uuid
+
 
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
@@ -49,5 +48,18 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
+        
+    def delete(self, obj=None):
+        """
+        Deletes obj from __objects if it is inside
+        """
+        if obj is None:
+            return
+        obj_to_del = f"{obj.__class__.__name__}.{obj.id}"
 
-
+        try:
+            del FileStorage.__objects[obj_to_del]
+        except AttributeError:
+            pass
+        except keyboardInterrupt:
+            pass
