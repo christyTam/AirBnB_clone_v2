@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Console Module """
-import sys
+"""Defines the HBNB console."""
 import cmd
 from shlex import split
 from models import storage
